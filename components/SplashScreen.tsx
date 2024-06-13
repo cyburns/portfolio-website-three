@@ -2,17 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Oswald } from "next/font/google";
 
-const words = [
-  "Hello",
-  "Bonjour",
-  "Ciao",
-  "Olà",
-  "やあ",
-  "Hallå",
-  "Guten tag",
-  "Hallo",
-];
+const oswald = Oswald({ subsets: ["latin"] });
+
+const percents = ["13%", "27%", "38%", "49%", "58%", "67%", "74%", "89%"];
 
 export const opacity = {
   initial: {
@@ -43,7 +37,7 @@ const SplashScreen = () => {
   }, []);
 
   useEffect(() => {
-    if (index == words.length - 1) return;
+    if (index == percents.length - 1) return;
     setTimeout(
       () => {
         setIndex(index + 1);
@@ -87,8 +81,10 @@ const SplashScreen = () => {
             animate="enter"
             className="flex items-center text-white text-[42px] absolute z-[1]"
           >
-            <span className="block w-[10px] h-[10px] bg-white rounded-full mr-[10px]"></span>
-            {words[index]}
+            <span
+              className={`block w-[10px] h-[10px] bg-white rounded-full mr-[10px] ${oswald.className}`}
+            ></span>
+            {percents[index]}
           </motion.p>
           <svg className="absolute top-0 w-full h-[calc(100%+300px)]">
             <motion.path

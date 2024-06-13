@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 
 export default function Description() {
   const phrase =
-    "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.";
+    "Developing powerful and efficient full stack applications. Together, we'll redefine what's possible in tech. No nonsense, always on the cutting edge.";
   const description = useRef(null);
   const isInView = useInView(description);
 
