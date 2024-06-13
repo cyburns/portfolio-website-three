@@ -20,10 +20,10 @@ export default function index() {
     <motion.div
       style={{ y }}
       ref={container}
-      className="bg-white text-black flex flex-col items-center justify-center relative z-0"
+      className="bg-[#252525] text-white flex flex-col items-center justify-center relative z-0"
     >
-      <div className="pt-[200px] w-full max-w-[1800px] bg-white">
-        <div className="border-b border-gray-400 pb-[100px] mx-[200px] relative">
+      <div className="pt-[200px] w-full max-w-[50rem] bg-[#252525] p-4">
+        <div className="border-b border-gray-400 pb-[100px] relative">
           <span className="flex items-center">
             <div className="w-[100px] h-[100px] relative rounded-full overflow-hidden">
               <Image
@@ -33,9 +33,11 @@ export default function index() {
                 className="object-cover"
               />
             </div>
-            <h2 className="ml-[0.3em] text-[5vw] font-light">Let's work</h2>
+            <h2 className="ml-[0.3em] text-[10vw] sm:text-[5vw] font-light">
+              Let's work
+            </h2>
           </span>
-          <h2 className="text-[5vw] font-light">together</h2>
+          <h2 className="text-[10vw] sm:text-[5vw] font-light">together</h2>
           <motion.div style={{ x }} className={styles.buttonContainer}>
             <Rounded backgroundColor={"#334BD3"} className={styles.button}>
               <p>Get in touch</p>
@@ -56,7 +58,7 @@ export default function index() {
             />
           </motion.svg>
         </div>
-        <div className="flex gap-[20px] mt-[100px] mx-[200px]">
+        <div className="flex mt-[100px] w-full">
           <Rounded>
             <p>cyrusburns@gmail.com</p>
           </Rounded>
