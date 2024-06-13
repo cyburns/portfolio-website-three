@@ -2,6 +2,7 @@ import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
 import { slideUp, opacity } from "./animation";
 import Rounded from "@/common/RoundedButton";
+import styles from "./style.module.scss";
 
 export default function Description() {
   const phrase =
@@ -28,7 +29,7 @@ export default function Description() {
                 key={index}
                 className="text-[3rem] gap-2 leading-[1.3]"
               >
-                {word}{" "}
+                {word}
               </motion.span>
             </span>
           ))}
@@ -43,8 +44,8 @@ export default function Description() {
             positions me in a unique place in the web design world.
           </motion.p>
           <div data-scroll data-scroll-speed={0.1} className="relative">
-            <Rounded className="button top-80% left-[calc(100%-200px)] w-36 h-36 bg-[#1C1D20] text-white rounded-full flex items-center justify-center cursor-pointer">
-              <p className="m-0 text-sm font-light z-40">About me</p>
+            <Rounded className={styles.button}>
+              <p>About me</p>
             </Rounded>
           </div>
         </div>

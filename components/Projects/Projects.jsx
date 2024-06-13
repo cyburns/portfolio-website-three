@@ -121,12 +121,11 @@ export default function Projects() {
           />
         ))}
       </div>
-      <Rounded
-        backgroundColor={"#334BD3"}
-        className="w-[180px] h-[100px] border-2 text-white rounded-full flex items-center justify-center cursor-pointer mb-5"
-      >
-        <p className="m-0 text-[16px] font-light relative z-20">More</p>
-      </Rounded>
+      <div className="mb-3">
+        <Rounded>
+          <p className="text-white z-40 p-5">More work</p>
+        </Rounded>
+      </div>
       <>
         <motion.div
           ref={modalContainer}

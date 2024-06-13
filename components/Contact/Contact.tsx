@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import Magnetic from "@/common/Magnetic";
 import CB_HERO_BG from "@/public/images/FINAL_HERO_TWO.png";
+import styles from "./style.module.scss";
 
 export default function index() {
   const container = useRef(null);
@@ -19,7 +20,7 @@ export default function index() {
     <motion.div
       style={{ y }}
       ref={container}
-      className="bg-white text-black flex flex-col items-center justify-center relative -z-10"
+      className="bg-white text-black flex flex-col items-center justify-center relative z-0"
     >
       <div className="pt-[200px] w-full max-w-[1800px] bg-white">
         <div className="border-b border-gray-400 pb-[100px] mx-[200px] relative">
@@ -35,17 +36,9 @@ export default function index() {
             <h2 className="ml-[0.3em] text-[5vw] font-light">Let's work</h2>
           </span>
           <h2 className="text-[5vw] font-light">together</h2>
-          <motion.div
-            style={{ x }}
-            className="absolute left-[calc(100%-400px)] top-[calc(100%-75px)]"
-          >
-            <Rounded
-              backgroundColor={"#334BD3"}
-              className="w-[180px] h-[180px] bg-[#455ce9] text-white rounded-full flex items-center justify-center cursor-pointer absolute"
-            >
-              <p className="m-0 text-[16px] font-light relative z-2">
-                Get in touch
-              </p>
+          <motion.div style={{ x }} className={styles.buttonContainer}>
+            <Rounded backgroundColor={"#334BD3"} className={styles.button}>
+              <p>Get in touch</p>
             </Rounded>
           </motion.div>
           <motion.svg

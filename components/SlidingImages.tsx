@@ -105,7 +105,7 @@ export default function SlidingImages() {
         })}
       </motion.div>
       <motion.div style={{ height }} className="relative mt-[100px] bg-red-500">
-        <div className="h-[1550%] w-[120%] -left-[10%] rounded-b-full bg-black z-1 absolute shadow-[0_60px_50px_rgba(0,0,0,0.748)]"></div>
+        <div className="h-[1550%] w-[120%] -left-[10%] rounded-b-full bg-black z-1 absolute shadow-[0_60px_50px_rgba(0,0,0,0.748)] z-50"></div>
       </motion.div>
     </section>
   );

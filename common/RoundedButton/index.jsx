@@ -6,13 +6,12 @@ import Magnetic from "../Magnetic";
 
 export default function index({
   children,
-  backgroundColor = "#1e58ee",
+  backgroundColor = "#455CE9",
   ...attributes
 }) {
   const circle = useRef(null);
   let timeline = useRef(null);
   let timeoutId = null;
-
   useEffect(() => {
     timeline.current = gsap.timeline({ paused: true });
     timeline.current

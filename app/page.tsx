@@ -9,7 +9,7 @@ import Block from "@/components/Block";
 import Description from "@/components/Description/Description";
 import Projects from "@/components/Projects/Projects";
 import SlidingImages from "@/components/SlidingImages";
-import Contact from "@/components/Contact";
+import Contact from "@/components/Contact/Contact";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,7 +27,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="max-w-[100%] overflow-hidden">
+    <main className="-z-50 overflow-hidden max-w-[100%">
       <AnimatePresence mode="wait">
         {isLoading && <SplashScreen />}
       </AnimatePresence>
