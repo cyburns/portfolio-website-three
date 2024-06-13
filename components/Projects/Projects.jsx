@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Project from "./components/project";
+import ProjectCard from "./PorjectCard";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import Image from "next/image";
@@ -109,12 +109,12 @@ export default function Projects() {
       onMouseMove={(e) => {
         moveItems(e.clientX, e.clientY);
       }}
-      className="flex items-center px-24 flex-col bg-black"
+      className="flex flex-col items-center pt-56 px-4 bg-black"
     >
       <div className="max-w-[1400px] w-full flex flex-col items-center justify-center mb-56">
         {projects.map((project, index) => {
           return (
-            <Project
+            <ProjectCard
               index={index}
               title={project.title}
               manageModal={manageModal}
@@ -125,9 +125,9 @@ export default function Projects() {
       </div>
       <Rounded
         backgroundColor={"#334BD3"}
-        className="w-[180px] h-[180px] bg-[#455ce9] text-white rounded-full flex items-center justify-center"
+        className="w-[180px] h-[100px] bg-[#455ce9] text-white rounded-full flex items-center justify-center cursor-pointer"
       >
-        <p className="m-0 text-lg z-10 relative">More</p>
+        <p className="m-0 text-[16px] font-light relative z-2">More</p>
       </Rounded>
       <>
         <motion.div
@@ -135,18 +135,17 @@ export default function Projects() {
           variants={scaleAnimation}
           initial="initial"
           animate={active ? "enter" : "closed"}
-          className="h-[350px] w-[400px] fixed top-[50%] left-[50%] bg-white overflow-hidden pointer-events-none z-10"
+          className="h-[350px] w-[400px] fixed top-1/2 left-1/2 bg-white pointer-events-none overflow-hidden z-3"
         >
           <div
             style={{ top: index * -100 + "%" }}
-            className="w-full h-full transition-all duration-500"
+            className="h-full w-full relative transition-top duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"
           >
             {projects.map((project, index) => {
               const { src, color } = project;
-
               return (
                 <div
-                  className="w-full h-full flex items-center justify-center"
+                  className="h-full w-full flex items-center justify-center"
                   style={{ backgroundColor: color }}
                   key={`modal_${index}`}
                 >
@@ -155,7 +154,6 @@ export default function Projects() {
                     width={300}
                     height={0}
                     alt="image"
-                    className="h-auto"
                   />
                 </div>
               );
@@ -164,14 +162,14 @@ export default function Projects() {
         </motion.div>
         <motion.div
           ref={cursor}
-          className={`w-20 h-20 rounded-full bg-[#455ce9] text-white fixed z-30 flex items-center justify-center text-sm font-light pointer-events-none`}
+          className="w-[80px] h-[80px] rounded-full bg-[#455ce9] text-white fixed z-3 flex items-center justify-center text-[14px] font-light pointer-events-none"
           variants={scaleAnimation}
           initial="initial"
           animate={active ? "enter" : "closed"}
         ></motion.div>
         <motion.div
           ref={cursorLabel}
-          className={`w-20 h-20 rounded-full bg-transparent text-white fixed z-30 flex items-center justify-center text-sm font-light pointer-events-none`}
+          className="w-[80px] h-[80px] rounded-full fixed z-3 flex items-center justify-center text-[14px] font-light pointer-events-none bg-transparent text-white"
           variants={scaleAnimation}
           initial="initial"
           animate={active ? "enter" : "closed"}

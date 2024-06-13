@@ -1,9 +1,9 @@
 import React from "react";
 
-const Hero = () => {
+const Block = () => {
   return (
     <div className="w-screen h-[70vh] overflow-hidden relative bg-black"></div>
   );
 };
 
-export default Hero;
+export default Block;

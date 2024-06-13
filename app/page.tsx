@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Hero from "@/components/Hero/Hero";
+import Hero from "@/components/Hero";
 import SplashScreen from "@/components/SplashScreen";
 import { AnimatePresence } from "framer-motion";
 import BlackBlur from "@/components/BlackBlur";
 import Block from "@/components/Block";
 import Description from "@/components/Description/Description";
 import Projects from "@/components/Projects/Projects";
+import SlidingImages from "@/components/SlidingImages";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,6 +36,8 @@ export default function Home() {
       <Block />
       <Description />
       <Projects />
+      <SlidingImages />
+      <Contact />
     </main>
   );
 }

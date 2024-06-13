@@ -2,8 +2,9 @@ import React from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 
 const BlackBlur = () => {
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const { scrollY } = useScroll();
+  const fixedDistance = 200;
+  const opacity = useTransform(scrollY, [0, fixedDistance], [0, 1]);
 
   return (
     <motion.div
