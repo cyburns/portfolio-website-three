@@ -13,9 +13,9 @@ export default function Description() {
   return (
     <div
       ref={description}
-      className="description px-20  flex justify-center bg-black text-white"
+      className="description px-4 sm:px-20  flex justify-center bg-black text-white"
     >
-      <div className="body max-w-[1400px] flex gap-10 relative">
+      <div className="body max-w-[1400px] flex flex-col sm:flex-row gap-10 relative">
         <p className="gap-2 leading-[1.3]">
           {phrase.split(" ").map((word, index) => (
             <span
@@ -27,7 +27,7 @@ export default function Description() {
                 custom={index}
                 animate={isInView ? "open" : "closed"}
                 key={index}
-                className="text-[3rem] gap-2 leading-[1.3]"
+                className="text-[2rem] sm:text-[3rem] gap-2 leading-[1.3]"
               >
                 {word}
               </motion.span>

@@ -5,13 +5,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { links, alphabet } from "@/lib/data";
 import Rounded from "@/common/RoundedButton";
-import Magnetic from "@/common/Magnetic";
 import { AnimatePresence } from "framer-motion";
 import Mobile from "./Mobile";
+import styles from "./style.module.scss";
 
 export default function Navbar() {
-  const header = useRef(null);
   const [isActive, setIsActive] = useState(false);
+  const [buttonDiff, setButtonDiff] = useState(0);
+
   const pathname = usePathname();
   const button = useRef(null);
 
@@ -19,13 +20,29 @@ export default function Navbar() {
     if (isActive) setIsActive(false);
   }, [pathname]);
 
+  const updateMaxScroll = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 768) {
+      setButtonDiff(500);
+    } else {
+      setButtonDiff(0);
+    }
+  };
+
+  useEffect(() => {
+    updateMaxScroll();
+    window.addEventListener("resize", updateMaxScroll);
+
+    return () => window.removeEventListener("resize", updateMaxScroll);
+  }, []);
+
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(button.current, {
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
-        end: window.innerHeight,
+        end: window.innerHeight - buttonDiff,
         onLeave: () => {
           gsap.to(button.current, {
             scale: 1,
@@ -149,19 +166,17 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <div ref={button} className="transform scale-0 fixed right-0 z-40">
+      <div ref={button} className={styles.headerButtonContainer}>
         <Rounded
           onClick={() => {
             setIsActive(!isActive);
           }}
-          className={`relative m-5 w-20 h-20 rounded-full bg-[#1c1d20] cursor-pointer flex items-center justify-center`}
+          className={`${styles.button}`}
         >
           <div
-            className={`relative w-full ${
-              isActive
-                ? "after:rotate-45 before:-rotate-45 after:top-[1px] before:top-0"
-                : ""
-            } after:block before:block after:h-px before:h-px after:w-2/5 before:w-2/5 after:mx-auto before:mx-auto after:bg-white before:bg-white after:absolute before:absolute after:transition-transform before:transition-transform after:top-[-5px] before:top-5`}
+            className={`${styles.burger} ${
+              isActive ? styles.burgerActive : ""
+            }`}
           ></div>
         </Rounded>
       </div>
