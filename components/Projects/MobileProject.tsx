@@ -28,7 +28,7 @@ const projects = [
     title: "Press Sports",
     src: "press.com.png",
     color: "#EFE8D3",
-    desc: "Interaction and development.",
+    desc: "Interaction and front-end development.",
   },
 ];
 
