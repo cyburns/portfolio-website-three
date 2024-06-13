@@ -12,7 +12,7 @@ import SlidingImages from "@/components/SlidingImages";
 import Contact from "@/components/Contact";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -27,7 +27,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <main className="max-w-[100%] overflow-hidden">
       <AnimatePresence mode="wait">
         {isLoading && <SplashScreen />}
       </AnimatePresence>

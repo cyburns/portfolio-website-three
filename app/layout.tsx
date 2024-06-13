@@ -4,7 +4,7 @@ import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import Mouse from "@/components/Mouse";
 import { Raleway } from "next/font/google";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Nav/Navbar";
 
 const raleway = Raleway({ subsets: ["latin"] });
 

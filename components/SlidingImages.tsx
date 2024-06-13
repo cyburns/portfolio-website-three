@@ -54,7 +54,7 @@ export default function SlidingImages() {
   const height = useTransform(scrollYProgress, [0, 0.9], [50, 8]);
 
   return (
-    <div
+    <section
       ref={container}
       className="flex flex-col gap-[3vw] relative pt-32 bg-black z-10"
     >
@@ -107,6 +107,6 @@ export default function SlidingImages() {
       <motion.div style={{ height }} className="relative mt-[100px] bg-red-500">
         <div className="h-[1550%] w-[120%] -left-[10%] rounded-b-full bg-black z-1 absolute shadow-[0_60px_50px_rgba(0,0,0,0.748)]"></div>
       </motion.div>
-    </div>
+    </section>
   );
 }

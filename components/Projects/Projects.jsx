@@ -105,29 +105,27 @@ export default function Projects() {
   };
 
   return (
-    <main
+    <section
       onMouseMove={(e) => {
         moveItems(e.clientX, e.clientY);
       }}
-      className="flex flex-col items-center pt-56 px-4 bg-black"
+      className="flex flex-col items-center pt-56 px-4 bg-black overflow-hidden"
     >
       <div className="max-w-[1400px] w-full flex flex-col items-center justify-center mb-56">
-        {projects.map((project, index) => {
-          return (
-            <ProjectCard
-              index={index}
-              title={project.title}
-              manageModal={manageModal}
-              key={index}
-            />
-          );
-        })}
+        {projects.map((project, index) => (
+          <ProjectCard
+            index={index}
+            title={project.title}
+            manageModal={manageModal}
+            key={index}
+          />
+        ))}
       </div>
       <Rounded
         backgroundColor={"#334BD3"}
-        className="w-[180px] h-[100px] bg-[#455ce9] text-white rounded-full flex items-center justify-center cursor-pointer"
+        className="w-[180px] h-[100px] border-2 text-white rounded-full flex items-center justify-center cursor-pointer mb-5"
       >
-        <p className="m-0 text-[16px] font-light relative z-2">More</p>
+        <p className="m-0 text-[16px] font-light relative z-20">More</p>
       </Rounded>
       <>
         <motion.div
@@ -177,6 +175,6 @@ export default function Projects() {
           View
         </motion.div>
       </>
-    </main>
+    </section>
   );
 }

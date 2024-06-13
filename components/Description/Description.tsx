@@ -37,14 +37,14 @@ export default function Description() {
           <motion.p
             variants={opacity}
             animate={isInView ? "open" : "closed"}
-            className="w-4/5 font-light text-xl gap-2 leading-[1.3] mb-24"
+            className="w-4/5 font-light text-xl gap-2 leading-[1.3] mb-24 overflow-hidden"
           >
             The combination of my passion for design, code & interaction
             positions me in a unique place in the web design world.
           </motion.p>
           <div data-scroll data-scroll-speed={0.1} className="relative">
             <Rounded className="button top-80% left-[calc(100%-200px)] w-36 h-36 bg-[#1C1D20] text-white rounded-full flex items-center justify-center cursor-pointer">
-              <p className="m-0 text-sm font-light">About me</p>
+              <p className="m-0 text-sm font-light z-40">About me</p>
             </Rounded>
           </div>
         </div>
