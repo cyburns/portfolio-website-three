@@ -77,29 +77,59 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="absolute top-0 z-50 w-full text-white p-8 flex justify-between items-center">
-        <div className="flex items-center ml-2 group cursor-pointer relative">
-          <p className="text-2xl mr-3 transition-transform duration-500 transform-gpu group-hover:rotate-180">
+      <nav className="absolute top-0 z-50 w-full text-white px-1 py-4 sm:p-8 flex justify-between items-start">
+        <div className="flex sm:ml-2 group cursor-pointer relative rotate-90 sm:rotate-0 -ml-16 mt-[5rem] sm:mt-0 transition-transform duration-500 transform-gpu">
+          <p className="text-xl transition-transform duration-500 transform-gpu group-hover:rotate-[360deg]">
             ©
           </p>
-          <div className="transition-transform duration-500 flex items-center ml-2 overflow-hidden ">
-            <p className="text-xl transition-transform duration-500 transform-gpu group-hover:-translate-x-20">
+          <div className="transition-transform duration-500 flex  ml-2 overflow-hidden font-mono">
+            <p className="text-xl transition-transform duration-500 transform-gpu group-hover:-translate-x-40 font-mono">
               Code by
             </p>
-            <p className="ml-2 text-xl transition-transform duration-500 transform-gpu group-hover:-translate-x-20">
+            <p className="ml-2 text-xl transition-transform duration-500 transform-gpu group-hover:-translate-x-20 font-mono">
               Cyrus
             </p>
-            <p className="ml-2 text-xl transition-transform duration-500 transform-gpu group-hover:-translate-x-20 absolute left-[100%]">
+            <p className="ml-2 text-xl transition-transform duration-500 transform-gpu group-hover:-translate-x-20 absolute left-[100%] font-mono">
               Burns
             </p>
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="hidden md:flex items-center">
           {links.map((link, index) => (
             <div
               key={index}
-              className="group mx-8 cursor-pointer flex items-center justify-center flex-col"
+              className="group mx-8 cursor-pointer flex items-center"
             >
+              <div className="flex flex-col items-center">
+                <a
+                  onMouseEnter={shuffleLetters}
+                  onMouseLeave={() => {
+                    gsap.to(["p.text-xl"], {
+                      x: 0,
+                      duration: 0.5,
+                      ease: "power2.out",
+                    });
+                  }}
+                  data-value={link.name}
+                  className="text-xl capitalize font-mono"
+                >
+                  {link.name}
+                </a>
+                <span className="w-2 h-2 bg-white rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-200 origin-center mt-1"></span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="flex md:hidden items-center"
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+        >
+          <div className="group mx-8 cursor-pointer flex items-center">
+            <div className="flex flex-row items-center">
+              <span className="w-2 h-2 bg-white rounded-full transform mr-1"></span>
               <a
                 onMouseEnter={shuffleLetters}
                 onMouseLeave={() => {
@@ -109,14 +139,13 @@ export default function Navbar() {
                     ease: "power2.out",
                   });
                 }}
-                data-value={link.name}
+                data-value="Menu"
                 className="text-xl capitalize font-mono"
               >
-                {link.name}
+                Menu
               </a>
-              <div className="w-2 h-2 bg-white rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-200 origin-center mt-1"></div>
             </div>
-          ))}
+          </div>
         </div>
       </nav>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import CB_HERO_BG from "@/public/images/FINAL_HERO_TWO.png";
@@ -13,6 +13,25 @@ const Hero = () => {
     target: ref,
     offset: ["start start", "end start"],
   });
+
+  const [maxScroll, setMaxScroll] = useState(1000);
+
+  const updateMaxScroll = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 768) {
+      setMaxScroll(500);
+    } else {
+      setMaxScroll(1000);
+    }
+  };
+
+  useEffect(() => {
+    updateMaxScroll();
+    window.addEventListener("resize", updateMaxScroll);
+    return () => window.removeEventListener("resize", updateMaxScroll);
+  }, []);
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, maxScroll]);
 
   const firstText = useRef(null);
   const secondText = useRef(null);
@@ -51,8 +70,6 @@ const Hero = () => {
     xPercent += 0.09 * direction;
   };
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 1000]);
-
   return (
     <div
       ref={ref}
@@ -68,7 +85,7 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          className="-z-50"
+          className="-z-10"
         />
       </motion.div>
 
@@ -76,13 +93,13 @@ const Hero = () => {
         <div ref={slider} className="relative whitespace-nowrap">
           <p
             ref={firstText}
-            className="relative m-0 text-white text-6xl font-bold opacity-80 pr-12 text-[10vw] z-50"
+            className="relative m-0 text-white text-6xl font-bold opacity-80 pr-5 sm:pr-12 text-[30vw] sm:text-[10vw] z-50"
           >
             Software Engineer •
           </p>
           <p
             ref={secondText}
-            className="absolute left-full top-0 m-0 text-white text-6xl font-bold opacity-80 text-[10vw] z-50"
+            className="absolute left-full top-0 m-0 text-white text-6xl font-bold opacity-80 text-[30vw] sm:text-[10vw] z-50"
           >
             Software Engineer •
           </p>
@@ -92,7 +109,7 @@ const Hero = () => {
       <div
         data-scroll
         data-scroll-speed="0.01"
-        className="absolute top-[20%] left-[65%] text-white text-3xl"
+        className="absolute top-[20%] left-[65%] text-white text-xl sm:text-3xl"
       >
         <svg
           width="30"

@@ -13,15 +13,15 @@ const navItems = [
   },
   {
     title: "Work",
-    href: "/work",
+    href: "#work",
   },
   {
     title: "About",
-    href: "/about",
+    href: "#about",
   },
   {
     title: "Contact",
-    href: "/contact",
+    href: "#contact",
   },
 ];
 
@@ -37,12 +37,12 @@ export default function Mobile() {
       exit="exit"
       className="fixed right-0 top-0 h-screen bg-[#292929] text-white z-30"
     >
-      <div className="box-border h-full p-24 flex flex-col justify-between">
+      <div className="box-border h-full p-16 sm:p-24 flex flex-col justify-between">
         <div
           onMouseLeave={() => {
             setSelectedIndicator(pathname);
           }}
-          className="flex flex-col text-5xl gap-3 mt-20"
+          className="flex flex-col text-3xl sm:text-5xl gap-3 mt-20"
         >
           <div className="text-[#999] border-b border-[#999] uppercase text-xs mb-10">
             <p>Navigation</p>
