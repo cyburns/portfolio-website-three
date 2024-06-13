@@ -38,7 +38,7 @@ const slider2 = [
   },
   {
     color: "#e1dad6",
-    src: "wix.jpg",
+    src: "officestudio.png",
   },
 ];
 

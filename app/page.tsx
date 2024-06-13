@@ -32,7 +32,7 @@ export default function Home() {
       <AnimatePresence mode="wait">
         {isLoading && <SplashScreen />}
       </AnimatePresence>
-      {/* <Hero />
+      <Hero />
       <BlackBlur />
       <Block />
       <Description />
@@ -42,7 +42,7 @@ export default function Home() {
       </div>
       <div className="flex sm:hidden z-50">
         <MobileProject />
-      </div> */}
+      </div>
       <Contact />
     </main>
   );

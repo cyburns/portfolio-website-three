@@ -22,7 +22,7 @@ export default function index() {
       ref={container}
       className="bg-[#252525] text-white flex flex-col items-center justify-center relative z-0"
     >
-      <div className="pt-[200px] w-full max-w-[50rem] bg-[#252525] p-4">
+      <div className="pt-[200px] w-full max-w-[80rem] bg-[#252525] p-4">
         <div className="border-b border-gray-400 pb-[100px] relative">
           <span className="flex items-center">
             <div className="w-[100px] h-[100px] relative rounded-full overflow-hidden">
@@ -33,11 +33,11 @@ export default function index() {
                 className="object-cover"
               />
             </div>
-            <h2 className="ml-[0.3em] text-[10vw] sm:text-[5vw] font-light">
+            <h2 className="ml-[0.3em] text-[12vw] sm:text-[5vw] font-light">
               Let's work
             </h2>
           </span>
-          <h2 className="text-[10vw] sm:text-[5vw] font-light">together</h2>
+          <h2 className="text-[12vw] sm:text-[5vw] font-light">together</h2>
           <motion.div style={{ x }} className={styles.buttonContainer}>
             <Rounded backgroundColor={"#334BD3"} className={styles.button}>
               <p>Get in touch</p>
@@ -50,7 +50,7 @@ export default function index() {
             viewBox="0 0 9 9"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-[30%] left-[100%]"
+            className="absolute top-[30%] left-[100%] hidden sm:block"
           >
             <path
               d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3.22386 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.64645L1.35355 0.646447L0.646447 1.35355Z"
@@ -58,40 +58,27 @@ export default function index() {
             />
           </motion.svg>
         </div>
-        <div className="flex mt-[100px] w-full">
+        <div className="mt-44 block sm:flex">
           <Rounded>
             <p>cyrusburns@gmail.com</p>
           </Rounded>
         </div>
+
         <div className="flex justify-between mt-[200px] p-[20px]">
           <div className="flex gap-[10px] items-end">
             <span className="flex flex-col gap-[15px]">
               <h3 className="text-gray-400 cursor-default font-light text-[1em]">
                 Version
               </h3>
-              <p className="relative cursor-pointer">2022 © Edition</p>
-            </span>
-            <span className="flex flex-col gap-[15px]">
-              <h3 className="text-gray-400 cursor-default font-light text-[1em]">
-                Version
-              </h3>
-              <p className="relative cursor-pointer">11:49 PM GMT+2</p>
+              <p className="relative cursor-pointer">2024 © Edition</p>
             </span>
           </div>
-          <div className="flex gap-[10px] items-end">
-            <span className="flex flex-col gap-[15px]">
-              <h3 className="text-gray-400 cursor-default font-light text-[1em]">
-                socials
-              </h3>
-              <Magnetic>
-                <p className="relative cursor-pointer">Awwwards</p>
-              </Magnetic>
-            </span>
+          <div className="flex flex-col sm:flex-row gap-[20px] items-end underline">
             <Magnetic>
               <p className="relative cursor-pointer">Instagram</p>
             </Magnetic>
             <Magnetic>
-              <p className="relative cursor-pointer">Dribbble</p>
+              <p className="relative cursor-pointer">GitHub</p>
             </Magnetic>
             <Magnetic>
               <p className="relative cursor-pointer">Linkedin</p>

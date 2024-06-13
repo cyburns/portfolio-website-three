@@ -42,7 +42,7 @@ const MobileProject = () => {
   const height = useTransform(scrollYProgress, [0, 0.9], [50, 8]);
 
   return (
-    <div ref={container} className="bg-black pt-56 mb-24">
+    <div ref={container} className="bg-black pt-56 mb-24 z-50">
       {projects.map((project, index) => {
         const { src, color, desc } = project;
 

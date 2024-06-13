@@ -3,7 +3,7 @@
 import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import CB_HERO_BG from "@/public/images/FINAL_HERO_TWO.png";
+import CB_HERO_BG from "@/public/images/CB_ORANGE_BLACK.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
