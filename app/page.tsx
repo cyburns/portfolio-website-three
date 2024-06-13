@@ -13,7 +13,7 @@ import Contact from "@/components/Contact/Contact";
 import MobileProject from "@/components/Projects/MobileProject";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
